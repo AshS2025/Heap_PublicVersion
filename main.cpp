@@ -105,16 +105,16 @@ void add(int added, int num, int* &heap) {
   else { //swap needed
     
     int currentIndex = added+1; //put it in as usual before swap
-    heap[current] = num;
-    int prev = floor(current/2);
+    heap[currentIndex] = num;
+    int prev = floor(currentIndex/2);
     
-    while(heap[prev] < heap[current] && prev > 0) { //while loop for swapping
+    while(heap[prev] < heap[currentIndex] && prev > 0) { //while loop for swapping
       int p = heap[prev];
       heap[prev] = num;
-      heap[current] = p;
-      int x = prevIndex;
+      heap[currentIndex] = p;
+      int x = prev;
       currentIndex = x;
-      prev = floor(current/2);
+      prev = floor(currentIndex/2);
       //ok swap function not working manual swapping rip
     }
   }
